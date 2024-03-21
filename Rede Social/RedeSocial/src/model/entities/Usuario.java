@@ -142,9 +142,9 @@ public class Usuario {
             Date nascimentoSql = new Date(nascimentoData.getTime());
 
             if (cc.validarUsuarioBanco(nome) == true) {
-                JOptionPane.showMessageDialog(null, "Nome inserido em uso! Por favor, defina um novo.", "", JOptionPane.ERROR_MESSAGE);
-            } else if (cc.validarUsuarioBanco(email) == true) {
-                JOptionPane.showMessageDialog(null, "O email digitado já está em uso. Por favor, selecione outro email.", "", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Nome inserido em uso! \nPor favor, defina um novo.", "", JOptionPane.ERROR_MESSAGE);
+            } else if (cc.validarUsuarioBancoEmail(email) == true) {
+                JOptionPane.showMessageDialog(null, "O email digitado já está em uso. \nPor favor, selecione outro email.", "", JOptionPane.ERROR_MESSAGE);
             } else {
                 novoUsuario.inserirUsuarioBanco(nome, email, senha, naturalidade, nascimentoData, genero);
                 Usuario user = new Usuario(nome, email, senha, naturalidade, nascimento, genero);
@@ -166,7 +166,7 @@ public class Usuario {
                 JOptionPane.showMessageDialog(null, "Bem vindo a Newtwork!", "", JOptionPane.INFORMATION_MESSAGE);
                 return true;
             } else {
-                JOptionPane.showMessageDialog(null, "Acesso negado! Usuário ou senha inválidos.", "Erro", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Acesso negado! \nUsuário ou senha inválidos.", "Erro", JOptionPane.ERROR_MESSAGE);
                 return false;
             }
         } catch (DomainException e) {

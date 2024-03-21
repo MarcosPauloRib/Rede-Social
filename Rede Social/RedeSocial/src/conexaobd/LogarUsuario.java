@@ -13,7 +13,6 @@ import model.entities.Usuario;
 
 
 public class LogarUsuario extends ConexaoPostgre {
-
     private static final String VALIDAR_USER ="SELECT COUNT(*) AS count FROM tbusuario WHERE nome = ? AND senha = ?";
 
     public boolean verificarUsuarioBanco(String nome, String senha) throws SQLException {
@@ -40,5 +39,6 @@ public class LogarUsuario extends ConexaoPostgre {
 
         return encontrado;
     }
+
 
 }

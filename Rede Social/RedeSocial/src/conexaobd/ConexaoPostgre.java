@@ -12,7 +12,7 @@ public class ConexaoPostgre {
     public final String password = "123456";
 
     private static final String VALIDAR_QUERY_NOME ="SELECT COUNT(*) AS count FROM tbusuario WHERE nome =?";
-    private static final String VALIDAR_QUERY_EMAIL ="SELECT COUNT(*) AS count FROM tbusuario WHERE nome =?";
+    private static final String VALIDAR_QUERY_EMAIL ="SELECT COUNT(*) AS count FROM tbusuario WHERE email =?";
 
 
     public boolean validarUsuarioBanco(String nome) throws SQLException {

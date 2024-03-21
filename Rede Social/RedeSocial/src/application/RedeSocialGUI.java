@@ -30,10 +30,11 @@ public class RedeSocialGUI extends JFrame {
     private Usuario user = new Usuario();
     private String nomeX = "";
     private String senhaX = "";
+
     private LogarUsuario lu = new LogarUsuario();
 
 
-    public RedeSocialGUI() {
+    public RedeSocialGUI() throws SQLException {
         configurarPainelLogin();
         configurarPainelLogado();
         exibirPainelLogin();
@@ -122,7 +123,7 @@ public class RedeSocialGUI extends JFrame {
         painelLogin.add(cadastro);
         this.setLocationRelativeTo(null);
     }
-    private void configurarPainelLogado() {
+    private void configurarPainelLogado() throws SQLException {
         this.setTitle("Newtwork");
         this.setSize(500, 300);
         this.setResizable(false);
@@ -242,7 +243,12 @@ public class RedeSocialGUI extends JFrame {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            RedeSocialGUI gui = new RedeSocialGUI();
+            RedeSocialGUI gui = null;
+            try {
+                gui = new RedeSocialGUI();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
             gui.setSize(500, 300);
             gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             gui.setVisible(true);
