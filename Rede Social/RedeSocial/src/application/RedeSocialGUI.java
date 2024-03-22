@@ -62,7 +62,7 @@ public class RedeSocialGUI extends JFrame {
         campoTexto1 = new JTextField();
         campoTexto1.setBounds(200, 50, 150, 25);
 
-        campoTexto2 = new JTextField();
+        campoTexto2 = new JPasswordField();
         campoTexto2.setBounds(200, 100, 150, 25);
 
 
